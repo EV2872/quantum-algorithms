@@ -54,9 +54,7 @@ def run_circuit(circuit: QuantumCircuit) -> Any:
 
 def is_constant(result: Any) -> bool: # true si es constante
     bits_string: str = list(result.get_counts().keys())[0]
-    if '1' in bits_string:
-        return False
-    return True
+    return not '1' in bits_string
 
 def main() -> int:
     n_qubits: int = int(input('Introduce the number of qubits: ')) # 0...n-1
